@@ -17,7 +17,7 @@
 //
 
 #import "OTPAuthBarClock.h"
-#import "GTMDefines.h"
+#import <GTMDefines.h>
 #import "UIColor+MobileColors.h"
 
 @interface OTPAuthBarClock ()

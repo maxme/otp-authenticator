@@ -18,12 +18,10 @@
 
 #import "OTPAuthURL.h"
 
-#import <Security/Security.h>
-
-#import "GTMNSDictionary+URLArguments.h"
-#import "GTMNSString+URLArguments.h"
-#import "GTMNSScanner+Unsigned.h"
-#import "GTMStringEncoding.h"
+#import <GTMNSDictionary+URLArguments.h>
+#import <GTMNSString+URLArguments.h>
+#import <GTMNSScanner+Unsigned.h>
+#import <GTMStringEncoding.h>
 #import "HOTPGenerator.h"
 #import "TOTPGenerator.h"
 

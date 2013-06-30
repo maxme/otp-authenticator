@@ -17,12 +17,10 @@
 //
 
 #import "OTPTableViewCell.h"
-#import "HOTPGenerator.h"
 #import "OTPAuthURL.h"
 #import "UIColor+MobileColors.h"
-#import "GTMLocalizedString.h"
-#import "GTMRoundedRectPath.h"
-#import "GTMSystemVersion.h"
+#import <GTMLocalizedString.h>
+#import <GTMRoundedRectPath.h>
 
 @interface OTPTableViewCell ()
 @property (readwrite, retain, nonatomic) OTPAuthURL *authURL;

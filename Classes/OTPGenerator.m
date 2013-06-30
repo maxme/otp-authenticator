@@ -19,9 +19,8 @@
 #import "OTPGenerator.h"
 
 #import <CommonCrypto/CommonHMAC.h>
-#import <CommonCrypto/CommonDigest.h>
 
-#import "GTMDefines.h"
+#import <GTMDefines.h>
 
 static NSUInteger kPinModTable[] = {
   0,

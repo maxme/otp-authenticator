@@ -17,7 +17,7 @@
 //
 
 #import "TOTPGenerator.h"
-#import "GTMDefines.h"
+#import <GTMDefines.h>
 
 @interface TOTPGenerator ()
 @property(assign, nonatomic, readwrite) NSTimeInterval period;

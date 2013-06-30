@@ -17,10 +17,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OTPAuthAppDelegate.h"
 
 int main(int argc, char *argv[]) {
-    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
-    int retVal = UIApplicationMain(argc, argv, nil, nil);
-    [pool drain];
-    return retVal;
+    @autoreleasepool{
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([OTPAuthAppDelegate class]));
+    }
 }

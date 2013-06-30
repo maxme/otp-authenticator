@@ -16,14 +16,14 @@
 //  the License.
 //
 
-#import "RootViewController.h"
+#import "OTPAuthAppDelegate.h"
 #import "OTPAuthURL.h"
 #import "HOTPGenerator.h"
 #import "OTPTableViewCell.h"
 #import "UIColor+MobileColors.h"
 #import "OTPAuthBarClock.h"
 #import "TOTPGenerator.h"
-#import "GTMLocalizedString.h"
+#import <GTMLocalizedString.h>
 
 @interface RootViewController ()
 @property(nonatomic, readwrite, retain) OTPAuthBarClock *clock;

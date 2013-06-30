@@ -18,7 +18,7 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
-#import "DecoderDelegate.h"
+#import <DecoderDelegate.h>
 
 @class OTPAuthURL;
 @class Decoder;

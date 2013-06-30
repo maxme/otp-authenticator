@@ -17,7 +17,7 @@
 //
 
 #import "OTPWelcomeViewController.h"
-#import "GTMLocalizedString.h"
+#import <GTMLocalizedString.h>
 #import "OTPAuthAppDelegate.h"
 
 @implementation OTPWelcomeViewController

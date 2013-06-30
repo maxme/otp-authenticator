@@ -18,7 +18,7 @@
 
 #import "OTPAuthAboutController.h"
 #import "UIColor+MobileColors.h"
-#import "GTMLocalizedString.h"
+#import <GTMLocalizedString.h>
 
 @interface OTPAuthAboutWebViewController : UIViewController
   <UIWebViewDelegate, UIAlertViewDelegate> {

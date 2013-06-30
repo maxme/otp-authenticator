@@ -17,16 +17,13 @@
 //
 
 #import "OTPAuthAppDelegate.h"
-#import "GTMDefines.h"
+#import <GTMDefines.h>
 #import "OTPAuthURL.h"
-#import "HOTPGenerator.h"
-#import "TOTPGenerator.h"
 #import "OTPTableViewCell.h"
 #import "OTPAuthAboutController.h"
 #import "OTPWelcomeViewController.h"
 #import "OTPAuthBarClock.h"
-#import "UIColor+MobileColors.h"
-#import "GTMLocalizedString.h"
+#import <GTMLocalizedString.h>
 
 static NSString *const kOTPKeychainEntriesArray = @"OTPKeychainEntries";
 
