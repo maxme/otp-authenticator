@@ -1,6 +1,7 @@
 //
 //  OTPAuthURL.h
 //
+//  Copyright 2013 Rising Oak LLC
 //  Copyright 2011 Google Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License"); you may not
@@ -41,10 +42,12 @@
 // For details on use, see android app:
 // http://google3/security/strongauth/mobile/android/StrongAuth/src/org/strongauth/Base32String.java
 + (NSData *)base32Decode:(NSString *)string;
+
 + (NSString *)encodeBase32:(NSData *)data;
 
 + (OTPAuthURL *)authURLWithURL:(NSURL *)url
                         secret:(NSData *)secret;
+
 + (OTPAuthURL *)authURLWithKeychainItemRef:(NSData *)keychainItemRef;
 
 // Returns a reconstructed NSURL object representing the current state of the
@@ -63,15 +66,15 @@
 // |generator| state.
 - (BOOL)isInKeychain;
 
-- (NSString*)checkCode;
+- (NSString *)checkCode;
 
 @end
 
-@interface TOTPAuthURL : OTPAuthURL  {
- @private
-  NSTimeInterval generationAdvanceWarning_;
-  NSTimeInterval lastProgress_;
-  BOOL warningSent_;
+@interface TOTPAuthURL : OTPAuthURL {
+@private
+    NSTimeInterval generationAdvanceWarning_;
+    NSTimeInterval lastProgress_;
+    BOOL warningSent_;
 }
 
 @property(readwrite, assign, nonatomic) NSTimeInterval generationAdvanceWarning;
@@ -81,10 +84,11 @@
 @end
 
 @interface HOTPAuthURL : OTPAuthURL {
- @private
-  NSString *otpCode_;
+@private
+    NSString *otpCode_;
 }
 - (id)initWithSecret:(NSData *)secret name:(NSString *)name;
+
 - (void)generateNextOTPCode;
 @end
 

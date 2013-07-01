@@ -1,6 +1,7 @@
 //
 //  OTPAuthBarClock.h
 //
+//  Copyright 2013 Rising Oak LLC
 //  Copyright 2011 Google Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License"); you may not
@@ -21,5 +22,6 @@
 
 @interface OTPAuthBarClock : UIView
 - (id)initWithFrame:(CGRect)frame period:(NSTimeInterval)period;
+
 - (void)invalidate;
 @end

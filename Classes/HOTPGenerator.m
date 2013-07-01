@@ -1,6 +1,7 @@
 //
 //  HOTPGenerator.m
 //
+//  Copyright 2013 Rising Oak LLC
 //  Copyright 2011 Google Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License"); you may not
@@ -23,27 +24,27 @@
 @synthesize counter = counter_;
 
 + (uint64_t)defaultInitialCounter {
-  return 1;
+    return 1;
 }
 
 - (id)initWithSecret:(NSData *)secret
            algorithm:(NSString *)algorithm
               digits:(NSUInteger)digits
              counter:(uint64_t)counter {
-  if ((self = [super initWithSecret:secret
-                          algorithm:algorithm
-                             digits:digits])) {
-    counter_ = counter;
-  }
-  return self;
+    if ((self = [super initWithSecret:secret
+                            algorithm:algorithm
+                               digits:digits])) {
+        counter_ = counter;
+    }
+    return self;
 }
 
 - (NSString *)generateOTP {
-  uint64_t counter = [self counter];
-  counter += 1;
-  NSString *otp = [super generateOTPForCounter:counter];
-  [self setCounter:counter];
-  return otp;
+    uint64_t counter = [self counter];
+    counter += 1;
+    NSString *otp = [super generateOTPForCounter:counter];
+    [self setCounter:counter];
+    return otp;
 }
 
 @end

@@ -1,6 +1,7 @@
 //
 //  OTPTableView.m
 //
+//  Copyright 2013 Rising Oak LLC
 //  Copyright 2011 Google Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License"); you may not
@@ -21,21 +22,21 @@
 @implementation OTPTableView
 
 - (void)setEditing:(BOOL)editing animated:(BOOL)animate {
-  if (editing) {
-    if ([self.delegate
-         respondsToSelector:@selector(otp_tableViewWillBeginEditing:)]) {
-      [self.delegate performSelector:@selector(otp_tableViewWillBeginEditing:)
-                          withObject:self];
+    if (editing) {
+        if ([self.delegate
+                respondsToSelector:@selector(otp_tableViewWillBeginEditing:)]) {
+            [self.delegate performSelector:@selector(otp_tableViewWillBeginEditing:)
+                                withObject:self];
+        }
     }
-  }
-  [super setEditing:editing animated:animate];
-  if (!editing) {
-    if ([self.delegate
-         respondsToSelector:@selector(otp_tableViewDidEndEditing:)]) {
-      [self.delegate performSelector:@selector(otp_tableViewDidEndEditing:)
-                          withObject:self];
+    [super setEditing:editing animated:animate];
+    if (!editing) {
+        if ([self.delegate
+                respondsToSelector:@selector(otp_tableViewDidEndEditing:)]) {
+            [self.delegate performSelector:@selector(otp_tableViewDidEndEditing:)
+                                withObject:self];
+        }
     }
-  }
 }
 
 @end

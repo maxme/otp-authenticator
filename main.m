@@ -1,6 +1,7 @@
 //
 //  main.m
 //
+//  Copyright 2013 Rising Oak LLC
 //  Copyright 2011 Google Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License"); you may not
@@ -20,7 +21,7 @@
 #import "OTPAuthAppDelegate.h"
 
 int main(int argc, char *argv[]) {
-    @autoreleasepool{
+    @autoreleasepool {
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([OTPAuthAppDelegate class]));
     }
 }

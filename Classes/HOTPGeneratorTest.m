@@ -29,30 +29,30 @@
 // http://www.ietf.org/rfc/rfc4226.txt
 // Appendix D - HOTP Algorithm: Test Values
 - (void)testHOTP {
-  NSString *secret = @"12345678901234567890";
-  NSData *secretData = [secret dataUsingEncoding:NSASCIIStringEncoding];
+    NSString *secret = @"12345678901234567890";
+    NSData *secretData = [secret dataUsingEncoding:NSASCIIStringEncoding];
 
-  HOTPGenerator *generator
-    = [[HOTPGenerator alloc] initWithSecret:secretData
-                                   algorithm:kOTPGeneratorSHA1Algorithm
-                                      digits:6
-                                     counter:0];
-  STAssertNotNil(generator, nil);
+    HOTPGenerator *generator
+            = [[HOTPGenerator alloc] initWithSecret:secretData
+                                          algorithm:kOTPGeneratorSHA1Algorithm
+                                             digits:6
+                                            counter:0];
+    STAssertNotNil(generator, nil);
 
-  STAssertEqualObjects(@"755224", [generator generateOTPForCounter:0], nil);
+    STAssertEqualObjects(@"755224", [generator generateOTPForCounter:0], nil);
 
-  // Make sure generating another OTP with generateOTPForCounter:
-  // doesn't change our generator.
-  STAssertEqualObjects(@"755224", [generator generateOTPForCounter:0], nil);
+    // Make sure generating another OTP with generateOTPForCounter:
+    // doesn't change our generator.
+    STAssertEqualObjects(@"755224", [generator generateOTPForCounter:0], nil);
 
-  NSArray *results = [NSArray arrayWithObjects:
-                      @"287082", @"359152", @"969429", @"338314", @"254676",
-                      @"287922", @"162583", @"399871", @"520489", @"403154",
-                      nil];
+    NSArray *results = [NSArray arrayWithObjects:
+            @"287082", @"359152", @"969429", @"338314", @"254676",
+            @"287922", @"162583", @"399871", @"520489", @"403154",
+            nil];
 
-  for (NSString *result in results) {
-    STAssertEqualObjects(result, [generator generateOTP], @"Invalid result");
-  }
+    for (NSString *result in results) {
+        STAssertEqualObjects(result, [generator generateOTP], @"Invalid result");
+    }
 }
 
 @end

@@ -1,6 +1,7 @@
 //
 //  OTPAuthAppDelegate.h
 //
+//  Copyright 2013 Rising Oak LLC
 //  Copyright 2011 Google Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License"); you may not
@@ -20,18 +21,18 @@
 #import "OTPAuthURLEntryController.h"
 
 typedef enum {
-  kOTPNotEditing,
-  kOTPEditingSingleRow,
-  kOTPEditingTable
+    kOTPNotEditing,
+    kOTPEditingSingleRow,
+    kOTPEditingTable
 } OTPEditingState;
 
 @interface OTPAuthAppDelegate : UIResponder
-    <UIApplicationDelegate,
-    OTPAuthURLEntryControllerDelegate,
-    UITableViewDataSource,
-    UITableViewDelegate,
-    UIActionSheetDelegate,
-    UIAlertViewDelegate>
+        <UIApplicationDelegate,
+        OTPAuthURLEntryControllerDelegate,
+        UITableViewDataSource,
+        UITableViewDelegate,
+        UIActionSheetDelegate,
+        UIAlertViewDelegate>
 @property(nonatomic, retain) IBOutlet UINavigationController *navigationController;
 @property(nonatomic, retain) IBOutlet UIWindow *window;
 @property(nonatomic, retain) IBOutlet UINavigationController *authURLEntryController;
@@ -40,6 +41,7 @@ typedef enum {
 @property(nonatomic, retain) IBOutlet UINavigationItem *authURLEntryNavigationItem;
 
 - (IBAction)addAuthURL:(id)sender;
+
 - (IBAction)showLegalInformation:(id)sender;
 
 @end

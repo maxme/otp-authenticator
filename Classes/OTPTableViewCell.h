@@ -1,6 +1,7 @@
 //
 //  OTPTableViewCell.h
 //
+//  Copyright 2013 Rising Oak LLC
 //  Copyright 2011 Google Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License"); you may not
@@ -21,24 +22,30 @@
 @class OTPAuthURL;
 @class OTPTableViewCellBackView;
 
-@interface OTPTableViewCell : UITableViewCell<UITextFieldDelegate>
+@interface OTPTableViewCell : UITableViewCell <UITextFieldDelegate>
 
-@property (retain, nonatomic, readwrite) IBOutlet UILabel *frontCodeLabel;
-@property (retain, nonatomic, readwrite) IBOutlet UILabel *frontWarningLabel;
-@property (retain, nonatomic, readwrite) IBOutlet UILabel *backCheckLabel;
-@property (retain, nonatomic, readwrite) IBOutlet UILabel *backIntegrityCheckLabel;
-@property (retain, nonatomic, readwrite) IBOutlet UITextField *frontNameTextField;
-@property (retain, nonatomic, readwrite) IBOutlet UIButton *frontRefreshButton;
-@property (retain, nonatomic, readwrite) IBOutlet UIButton *frontInfoButton;
-@property (retain, nonatomic, readwrite) IBOutlet UIView *frontView;
-@property (retain, nonatomic, readwrite) IBOutlet OTPTableViewCellBackView *backView;
+@property(retain, nonatomic, readwrite) IBOutlet UILabel *frontCodeLabel;
+@property(retain, nonatomic, readwrite) IBOutlet UILabel *frontWarningLabel;
+@property(retain, nonatomic, readwrite) IBOutlet UILabel *backCheckLabel;
+@property(retain, nonatomic, readwrite) IBOutlet UILabel *backIntegrityCheckLabel;
+@property(retain, nonatomic, readwrite) IBOutlet UITextField *frontNameTextField;
+@property(retain, nonatomic, readwrite) IBOutlet UIButton *frontRefreshButton;
+@property(retain, nonatomic, readwrite) IBOutlet UIButton *frontInfoButton;
+@property(retain, nonatomic, readwrite) IBOutlet UIView *frontView;
+@property(retain, nonatomic, readwrite) IBOutlet OTPTableViewCellBackView *backView;
 
 - (void)setAuthURL:(OTPAuthURL *)authURL;
+
 - (void)willBeginEditing;
+
 - (void)didEndEditing;
+
 - (IBAction)showInfo:(id)sender;
+
 - (IBAction)hideInfo:(id)sender;
+
 - (IBAction)refreshAuthURL:(id)sender;
+
 - (void)showCopyMenu:(CGPoint)location;
 
 @end

@@ -1,6 +1,7 @@
 //
 //  OTPWelcomeViewController.m
 //
+//  Copyright 2013 Rising Oak LLC
 //  Copyright 2011 Google Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License"); you may not
@@ -25,29 +26,29 @@
 @synthesize welcomeText = welcomeText_;
 
 - (id)init {
-  if ((self = [super initWithNibName:@"OTPWelcomeViewController" bundle:nil])) {
-    self.hidesBottomBarWhenPushed = YES;
-  }
-  return self;
+    if ((self = [super initWithNibName:@"OTPWelcomeViewController" bundle:nil])) {
+        self.hidesBottomBarWhenPushed = YES;
+    }
+    return self;
 }
 
 - (void)dealloc {
-  self.welcomeText = nil;
+    self.welcomeText = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-  UINavigationItem *navItem = [self navigationItem];
-  NSString *title = GTMLocalizedString(@"Welcome", @"Title for welcome screen");
-  navItem.title = title;
-  navItem.hidesBackButton = YES;
-  UIBarButtonItem *button
-    = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
-                                                     target:nil
-                                                     action:@selector(addAuthURL:)];
-  [navItem setRightBarButtonItem:button animated:NO];
+    UINavigationItem *navItem = [self navigationItem];
+    NSString *title = GTMLocalizedString(@"Welcome", @"Title for welcome screen");
+    navItem.title = title;
+    navItem.hidesBackButton = YES;
+    UIBarButtonItem *button
+            = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                            target:nil
+                                                            action:@selector(addAuthURL:)];
+    [navItem setRightBarButtonItem:button animated:NO];
 
-  NSString *label = GTMLocalizedString(@"Welcome_label", @"Welcome text");
-  welcomeText_.text = label;
+    NSString *label = GTMLocalizedString(@"Welcome_label", @"Welcome text");
+    welcomeText_.text = label;
 }
 
 @end

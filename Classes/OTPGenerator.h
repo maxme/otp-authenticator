@@ -1,6 +1,7 @@
 //
 //  OTPGenerator.h
 //
+//  Copyright 2013 Rising Oak LLC
 //  Copyright 2011 Google Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License"); you may not
@@ -45,12 +46,13 @@
 // endian.
 @interface OTPGenerator : NSObject
 
-@property (readonly, nonatomic, copy) NSString *algorithm;
-@property (readonly, nonatomic, copy) NSData *secret;
-@property (readonly, nonatomic) NSUInteger digits;
+@property(readonly, nonatomic, copy) NSString *algorithm;
+@property(readonly, nonatomic, copy) NSData *secret;
+@property(readonly, nonatomic) NSUInteger digits;
 
 // Some default values.
 + (NSString *)defaultAlgorithm;
+
 + (NSUInteger)defaultDigits;
 
 // Designated initializer.

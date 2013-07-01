@@ -1,6 +1,7 @@
 //
 //  OTPAuthURLEntryController.h
 //
+//  Copyright 2013 Rising Oak LLC
 //  Copyright 2011 Google Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License"); you may not
@@ -25,16 +26,16 @@
 @protocol OTPAuthURLEntryControllerDelegate;
 
 @interface OTPAuthURLEntryController : UIViewController
-    <UITextFieldDelegate,
-     UINavigationControllerDelegate,
-     DecoderDelegate,
-     UIAlertViewDelegate,
-     AVCaptureVideoDataOutputSampleBufferDelegate> {
- @private
-  dispatch_queue_t queue_;
+        <UITextFieldDelegate,
+        UINavigationControllerDelegate,
+        DecoderDelegate,
+        UIAlertViewDelegate,
+        AVCaptureVideoDataOutputSampleBufferDelegate> {
+@private
+    dispatch_queue_t queue_;
 }
 
-@property(nonatomic, readwrite, assign) id<OTPAuthURLEntryControllerDelegate> delegate;
+@property(nonatomic, readwrite, assign) id <OTPAuthURLEntryControllerDelegate> delegate;
 @property(nonatomic, readwrite, retain) IBOutlet UITextField *accountName;
 @property(nonatomic, readwrite, retain) IBOutlet UITextField *accountKey;
 @property(nonatomic, readwrite, retain) IBOutlet UILabel *accountNameLabel;
@@ -44,16 +45,20 @@
 @property(nonatomic, readwrite, retain) IBOutlet UIScrollView *scrollView;
 
 - (IBAction)accountNameDidEndOnExit:(id)sender;
+
 - (IBAction)accountKeyDidEndOnExit:(id)sender;
+
 - (IBAction)cancel:(id)sender;
+
 - (IBAction)done:(id)sender;
+
 - (IBAction)scanBarcode:(id)sender;
 
 @end
 
 @protocol OTPAuthURLEntryControllerDelegate
 
-- (void)authURLEntryController:(OTPAuthURLEntryController*)controller
+- (void)authURLEntryController:(OTPAuthURLEntryController *)controller
               didCreateAuthURL:(OTPAuthURL *)authURL;
 
 @end
