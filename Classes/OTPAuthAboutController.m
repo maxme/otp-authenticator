@@ -62,7 +62,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
-  return 3;
+  return 1;
 }
 
 - (NSString *)tableView:(UITableView *)tableView
@@ -90,18 +90,6 @@
   NSString *label = nil;
   switch([indexPath row]) {
     case 0:
-      label = @"Terms of Service";
-      text = GTMLocalizedString(@"Terms of Service",
-                                @"Terms of Service Table Item Title");
-      break;
-
-    case 1:
-      label = @"Privacy Policy";
-      text = GTMLocalizedString(@"Privacy Policy",
-                                @"Privacy Policy Table Item Title");
-      break;
-
-    case 2:
       label = @"Legal Notices";
       text = GTMLocalizedString(@"Legal Notices",
                                 @"Legal Notices Table Item Title");
@@ -124,19 +112,6 @@
   NSString *label = nil;
   switch([indexPath row]) {
     case 0: {
-      url = [NSURL URLWithString:@"http://m.google.com/tospage"];
-      label = @"Terms of Service";
-      break;
-    }
-
-    case 1:
-      // Privacy appears to do the localization thing correctly. So no hacks
-      // needed (contrast to case 0 above.
-      url = [NSURL URLWithString:@"http://www.google.com/mobile/privacy.html"];
-      label = @"Privacy Policy";
-      break;
-
-    case 2: {
         NSBundle *bundle = [NSBundle mainBundle];
         NSString *legalNotices = [bundle pathForResource:@"LegalNotices"
                                                   ofType:@"html"];
