@@ -42,8 +42,9 @@
 		179AEEC7178121E300CD0330 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 179AEEC6178121E300CD0330 /* iTunesArtwork@2x.png */; };
 		179AEECA1781227800CD0330 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 179AEEC81781227800CD0330 /* Icon@2x.png */; };
 		179AEECD178122B100CD0330 /* Icon-iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 179AEECC178122B100CD0330 /* Icon-iPad@2x.png */; };
+		179AEED01781258300CD0330 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 179AEECE1781258200CD0330 /* Default-568h@2x.png */; };
+		179AEED11781258300CD0330 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 179AEECF1781258200CD0330 /* Default@2x.png */; };
 		17F8ED5B17808ABF00B0B8B2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 17F8ED5A17808ABF00B0B8B2 /* README.md */; };
-		17F8EDBC1780F1E000B0B8B2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17F8EDBB1780F1DF00B0B8B2 /* Default-568h@2x.png */; };
 		1D3623260D0F684500981E51 /* OTPAuthAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* OTPAuthAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
@@ -73,7 +74,6 @@
 		8BE5CF7211AB48F700A20746 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BE5CF7111AB48F700A20746 /* close.png */; };
 		8BE5D80911AC824500A20746 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BE5D80811AC824500A20746 /* MobileCoreServices.framework */; };
 		8BF23A7213D4EF7000F3FD82 /* UIColor+MobileColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BF23A7113D4EF7000F3FD82 /* UIColor+MobileColors.m */; };
-		8BF23A7413D4EF7E00F3FD82 /* GoogleNavBarLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF23A7313D4EF7E00F3FD82 /* GoogleNavBarLogo.png */; };
 		8BF505511186272B005C936F /* OTPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BF505501186272B005C936F /* OTPTableViewCell.m */; };
 		8BF5098311863B35005C936F /* OTPAuthAboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BF5098111863B35005C936F /* OTPAuthAboutController.m */; };
 		8BF50E051186512E005C936F /* OTPWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BF50E031186512E005C936F /* OTPWelcomeViewController.m */; };
@@ -112,8 +112,9 @@
 		179AEEC6178121E300CD0330 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		179AEEC81781227800CD0330 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		179AEECC178122B100CD0330 /* Icon-iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-iPad@2x.png"; sourceTree = "<group>"; };
+		179AEECE1781258200CD0330 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		179AEECF1781258200CD0330 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		17F8ED5A17808ABF00B0B8B2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		17F8EDBB1780F1DF00B0B8B2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		1D3623240D0F684500981E51 /* OTPAuthAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTPAuthAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* OTPAuthAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTPAuthAppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* Authenticator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Authenticator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,7 +127,7 @@
 		8B0022DF11E7BF800092DE18 /* OTPTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTPTableView.m; sourceTree = "<group>"; };
 		8B0028B311EB75920092DE18 /* OTPScannerOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTPScannerOverlayView.h; sourceTree = "<group>"; };
 		8B0028B411EB75920092DE18 /* OTPScannerOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTPScannerOverlayView.m; sourceTree = "<group>"; };
-		8B00365211ECD2390092DE18 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		8B00365211ECD2390092DE18 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		8B18D043139801AA00A6654D /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = ar; path = ar.lproj/LegalNotices.html; sourceTree = "<group>"; };
 		8B18D044139801AA00A6654D /* bg */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = bg; path = bg.lproj/LegalNotices.html; sourceTree = "<group>"; };
 		8B18D045139801AA00A6654D /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = ca; path = ca.lproj/LegalNotices.html; sourceTree = "<group>"; };
@@ -264,7 +265,6 @@
 		8BE5D80811AC824500A20746 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		8BF23A7013D4EF7000F3FD82 /* UIColor+MobileColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+MobileColors.h"; sourceTree = "<group>"; };
 		8BF23A7113D4EF7000F3FD82 /* UIColor+MobileColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MobileColors.m"; sourceTree = "<group>"; };
-		8BF23A7313D4EF7E00F3FD82 /* GoogleNavBarLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GoogleNavBarLogo.png; sourceTree = "<group>"; };
 		8BF5054F1186272B005C936F /* OTPTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTPTableViewCell.h; sourceTree = "<group>"; };
 		8BF505501186272B005C936F /* OTPTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTPTableViewCell.m; sourceTree = "<group>"; };
 		8BF5098011863B35005C936F /* OTPAuthAboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTPAuthAboutController.h; sourceTree = "<group>"; };
@@ -379,6 +379,9 @@
 		179AEEBF178118C500CD0330 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
+				8B00365211ECD2390092DE18 /* Default.png */,
+				179AEECF1781258200CD0330 /* Default@2x.png */,
+				179AEECE1781258200CD0330 /* Default-568h@2x.png */,
 				8BE5C90111A7423700A20746 /* Info.png */,
 				179AEEB8178118AF00CD0330 /* Info@2x.png */,
 				179AEEC217811A4500CD0330 /* PlusButton.png */,
@@ -432,7 +435,6 @@
 			isa = PBXGroup;
 			children = (
 				179AEEBF178118C500CD0330 /* Generated */,
-				8BF23A7313D4EF7E00F3FD82 /* GoogleNavBarLogo.png */,
 				8BC958E5128B5DB500A0E8F2 /* Icon-iPad.png */,
 				179AEECC178122B100CD0330 /* Icon-iPad@2x.png */,
 				8BC958E6128B5DB500A0E8F2 /* Icon.png */,
@@ -451,8 +453,6 @@
 				8BF5104C118748C7005C936F /* OTPAuthURLEntryController.xib */,
 				8BF5104D118748C7005C936F /* RootViewController.xib */,
 				8BE5CF5411AB441D00A20746 /* OTPTableViewCell.xib */,
-				8B00365211ECD2390092DE18 /* Default.png */,
-				17F8EDBB1780F1DF00B0B8B2 /* Default-568h@2x.png */,
 				8BDA1F1213550A7B003EF49C /* Localizable.strings */,
 			);
 			path = Resources;
@@ -617,11 +617,9 @@
 				8BF51059118748C7005C936F /* RootViewController.xib in Resources */,
 				8BE5CF5511AB441D00A20746 /* OTPTableViewCell.xib in Resources */,
 				8B00365311ECD2390092DE18 /* Default.png in Resources */,
-				17F8EDBC1780F1E000B0B8B2 /* Default-568h@2x.png in Resources */,
 				8BC958EA128B5DB500A0E8F2 /* Icon.png in Resources */,
 				8BC958E9128B5DB500A0E8F2 /* Icon-iPad.png in Resources */,
 				8BDA1F1313550A7B003EF49C /* Localizable.strings in Resources */,
-				8BF23A7413D4EF7E00F3FD82 /* GoogleNavBarLogo.png in Resources */,
 				17F8ED5B17808ABF00B0B8B2 /* README.md in Resources */,
 				8BE5CF7211AB48F700A20746 /* close.png in Resources */,
 				179AEEBB178118AF00CD0330 /* close@2x.png in Resources */,
@@ -634,6 +632,8 @@
 				179AEEC7178121E300CD0330 /* iTunesArtwork@2x.png in Resources */,
 				179AEECA1781227800CD0330 /* Icon@2x.png in Resources */,
 				179AEECD178122B100CD0330 /* Icon-iPad@2x.png in Resources */,
+				179AEED01781258300CD0330 /* Default-568h@2x.png in Resources */,
+				179AEED11781258300CD0330 /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
