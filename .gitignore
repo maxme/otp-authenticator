@@ -2,4 +2,5 @@
 xcuserdata
 Pods/
 Podfile.lock
+Resources/Generated/*.png
 .idea
