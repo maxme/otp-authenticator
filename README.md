@@ -3,17 +3,37 @@
 Two-factor authentication client, with support for HOTP and TOTP. This
 is a fork of the original Google Authenticator client for iOS.
 
+## Development
+
+This project uses [CocoaPods](http://cocoapods.org/) to manage
+dependencies. To install CocoaPods use
+
+```
+gem install cocoapods
+```
+
+Once you have CocoaPods installed, you can fetch all dependencies
+using
+
+```
+pod install
+```
+
+You can now open the `OTPAuth.xcworkspace` file in XCode and run the
+application.
+
 ## Configuration
 
 It is designed to be configured via a URL handler, as follows:
 
-  otpauth://TYPE/LABEL?PARAMETERS
+`otpauth://TYPE/LABEL?PARAMETERS`
 
-where TYPE is "hotp" or "totp" and LABEL is a human readable label to help
-distinguish multiple otp generators.
+where TYPE is `hotp` or `totp` and `LABEL` is a human readable label
+to help distinguish multiple otp generators.
 
 The supported PARAMETERS are:
 
+```
   algorithm=(SHA1|SHA256|SHA512|MD5)
     OPTIONAL, defaults to SHA1.
 
@@ -28,6 +48,7 @@ The supported PARAMETERS are:
 
   period=N  (totp specific)
     OPTIONAL, defaults to 30.
+```
 
 ## References
 
