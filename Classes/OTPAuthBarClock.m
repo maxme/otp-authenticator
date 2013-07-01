@@ -53,7 +53,6 @@
 - (void)dealloc {
   _GTMDevAssert(!self.timer, @"Need to call invalidate on clock!");
   [[NSNotificationCenter defaultCenter] removeObserver:self];
-  [super dealloc];
 }
 
 - (void)redrawTimer:(NSTimer *)timer {

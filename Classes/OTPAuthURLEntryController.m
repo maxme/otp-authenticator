@@ -29,7 +29,7 @@
 @property(nonatomic, readwrite, assign) UIBarButtonItem *doneButtonItem;
 @property(nonatomic, readwrite, retain) Decoder *decoder;
 // queue is retained using dispatch_queue retain semantics.
-@property (nonatomic, retain) __attribute__((NSObject)) dispatch_queue_t queue;
+@property (nonatomic, retain) dispatch_queue_t queue;
 @property (nonatomic, retain) AVCaptureSession *avSession;
 @property BOOL handleCapture;
 
@@ -80,7 +80,6 @@
   self.queue = nil;
   self.avSession = nil;
   self.queue = nil;
-  [super dealloc];
 }
 
 - (void)viewDidLoad {
@@ -122,7 +121,7 @@
   self.doneButtonItem
     = self.navigationController.navigationBar.topItem.rightBarButtonItem;
   self.doneButtonItem.enabled = NO;
-  self.decoder = [[[Decoder alloc] init] autorelease];
+  self.decoder = [[Decoder alloc] init];
   self.decoder.delegate = self;
   self.scrollView.backgroundColor = [UIColor googleBlueBackgroundColor];
 
@@ -149,13 +148,7 @@
 
 - (void)setQueue:(dispatch_queue_t)aQueue {
   if (queue_ != aQueue) {
-    if (queue_) {
-      dispatch_release(queue_);
-    }
     queue_ = aQueue;
-    if (queue_) {
-      dispatch_retain(queue_);
-    }
   }
 }
 
@@ -239,8 +232,8 @@
     }
     NSString *name = self.accountName.text;
     OTPAuthURL *authURL
-      = [[[authURLClass alloc] initWithSecret:secret
-                                         name:name] autorelease];
+      = [[authURLClass alloc] initWithSecret:secret
+                                         name:name];
     NSString *checkCode = authURL.checkCode;
     if (checkCode) {
       [self.delegate authURLEntryController:self didCreateAuthURL:authURL];
@@ -261,12 +254,11 @@
     NSString *button
       = GTMLocalizedString(@"Try Again",
                            @"Button title to try again");
-    UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:title
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
                                                      message:message
                                                     delegate:nil
                                            cancelButtonTitle:button
-                                           otherButtonTitles:nil]
-                          autorelease];
+                                           otherButtonTitles:nil];
     [alert show];
   }
 }
@@ -279,7 +271,7 @@
 
 - (IBAction)scanBarcode:(id)sender {
   if (!self.avSession) {
-    self.avSession = [[[AVCaptureSession alloc] init] autorelease];
+    self.avSession = [[AVCaptureSession alloc] init];
     AVCaptureDevice *device =
       [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     AVCaptureDeviceInput *captureInput =
@@ -288,9 +280,8 @@
     dispatch_queue_t queue = dispatch_queue_create("OTPAuthURLEntryController",
                                                    0);
     self.queue = queue;
-    dispatch_release(queue);
     AVCaptureVideoDataOutput *captureOutput =
-      [[[AVCaptureVideoDataOutput alloc] init] autorelease];
+            [[AVCaptureVideoDataOutput alloc] init];
     [captureOutput setAlwaysDiscardsLateVideoFrames:YES];
     [captureOutput setMinFrameDuration:CMTimeMake(5,1)];  // At most 5 frames/sec.
     [captureOutput setSampleBufferDelegate:self
@@ -318,13 +309,13 @@
   [cancelButton setTitle:cancelString forState:UIControlStateNormal];
 
   UIViewController *previewController
-    = [[[UIViewController alloc] init] autorelease];
+    = [[UIViewController alloc] init];
   [previewController.view.layer addSublayer:previewLayer];
 
   CGRect frame = previewController.view.bounds;
   previewLayer.frame = frame;
   OTPScannerOverlayView *overlayView
-    = [[[OTPScannerOverlayView alloc] initWithFrame:frame] autorelease];
+    = [[OTPScannerOverlayView alloc] initWithFrame:frame];
   [previewController.view addSubview:overlayView];
 
   // Center the cancel button horizontally, and put it
@@ -359,35 +350,35 @@
 didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
        fromConnection:(AVCaptureConnection *)connection {
   if (!self.handleCapture) return;
-  NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-  CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
-  if (imageBuffer) {
-    CVReturn ret = CVPixelBufferLockBaseAddress(imageBuffer, 0);
-    if (ret == kCVReturnSuccess) {
-      uint8_t *base = (uint8_t *)CVPixelBufferGetBaseAddress(imageBuffer);
-      size_t bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer);
-      size_t width = CVPixelBufferGetWidth(imageBuffer);
-      size_t height = CVPixelBufferGetHeight(imageBuffer);
-      CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-      CGContextRef context
-        = CGBitmapContextCreate(base, width, height, 8, bytesPerRow, colorSpace,
-                                kCGBitmapByteOrder32Little | kCGImageAlphaPremultipliedFirst);
-      CGColorSpaceRelease(colorSpace);
-      CGImageRef cgImage = CGBitmapContextCreateImage(context);
-      CGContextRelease(context);
-      UIImage *image = [UIImage imageWithCGImage:cgImage];
-      CFRelease(cgImage);
-      CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
-      [self.decoder performSelectorOnMainThread:@selector(decodeImage:)
-                                     withObject:image
-                                  waitUntilDone:NO];
-    } else {
-      NSLog(@"Unable to lock buffer %d", ret);
+    @autoreleasepool{
+        CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
+        if (imageBuffer) {
+        CVReturn ret = CVPixelBufferLockBaseAddress(imageBuffer, 0);
+        if (ret == kCVReturnSuccess) {
+          uint8_t *base = (uint8_t *)CVPixelBufferGetBaseAddress(imageBuffer);
+          size_t bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer);
+          size_t width = CVPixelBufferGetWidth(imageBuffer);
+          size_t height = CVPixelBufferGetHeight(imageBuffer);
+          CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+          CGContextRef context
+            = CGBitmapContextCreate(base, width, height, 8, bytesPerRow, colorSpace,
+                                    kCGBitmapByteOrder32Little | kCGImageAlphaPremultipliedFirst);
+          CGColorSpaceRelease(colorSpace);
+          CGImageRef cgImage = CGBitmapContextCreateImage(context);
+          CGContextRelease(context);
+          UIImage *image = [UIImage imageWithCGImage:cgImage];
+          CFRelease(cgImage);
+          CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
+          [self.decoder performSelectorOnMainThread:@selector(decodeImage:)
+                                         withObject:image
+                                      waitUntilDone:NO];
+        } else {
+          NSLog(@"Unable to lock buffer %d", ret);
+        }
+      } else {
+        NSLog(@"Unable to get imageBuffer from %p", sampleBuffer);
+      }
     }
-  } else {
-    NSLog(@"Unable to get imageBuffer from %@", sampleBuffer);
-  }
-  [pool release];
 }
 
 
@@ -442,12 +433,11 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
                  urlString];
       NSString *button = GTMLocalizedString(@"Try Again",
                                             @"Button title to try again");
-      UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:title
+      UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
                                                        message:message
                                                       delegate:self
                                              cancelButtonTitle:button
-                                             otherButtonTitles:nil]
-                            autorelease];
+                                             otherButtonTitles:nil];
       [alert show];
     }
   }

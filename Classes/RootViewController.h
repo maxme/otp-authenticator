@@ -22,7 +22,6 @@
 
 @interface RootViewController : UITableViewController
 
-@property(nonatomic, readwrite, assign) id<UITableViewDataSource, UITableViewDelegate> delegate;
 @property(nonatomic, readonly, retain) OTPAuthBarClock *clock;
 @property(nonatomic, readwrite, retain) IBOutlet UIBarButtonItem *addItem;
 @property(nonatomic, readwrite, retain) IBOutlet UIBarButtonItem *legalItem;

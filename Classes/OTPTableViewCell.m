@@ -75,7 +75,6 @@
   self.backView = nil;
   self.authURL = nil;
 
-  [super dealloc];
 }
 
 - (void)layoutSubviews {
@@ -108,8 +107,7 @@
   [nc removeObserver:self
                 name:OTPAuthURLDidGenerateNewOTPNotification
               object:authURL_];
-  [authURL_ autorelease];
-  authURL_ = [authURL retain];
+    authURL_ = authURL;
   [self updateUIForAuthURL:authURL_];
   [nc addObserver:self
          selector:@selector(otpAuthURLDidGenerateNewOTP:)
@@ -140,8 +138,7 @@
     self.frontWarningLabel.text = otpCode;
     [UIView beginAnimations:@"otpFadeIn" context:nil];
     [UIView setAnimationDelegate:self];
-    [self retain];
-    [UIView setAnimationDidStopSelector:@selector(otpChangeDidStop:finished:context:)];
+      [UIView setAnimationDidStopSelector:@selector(otpChangeDidStop:finished:context:)];
     self.frontCodeLabel.alpha = 1;
     [UIView commitAnimations];
   } else {
@@ -149,7 +146,6 @@
     self.frontWarningLabel.alpha = 0;
     self.frontWarningLabel.hidden = YES;
   }
-  [self release];
 }
 
 - (BOOL)canBecomeFirstResponder {
@@ -278,8 +274,7 @@
   self.frontWarningLabel.alpha = 0;
   [UIView beginAnimations:@"otpFadeOut" context:nil];
   [UIView setAnimationDelegate:self];
-  [self retain];
-  [UIView setAnimationDidStopSelector:@selector(otpChangeDidStop:finished:context:)];
+    [UIView setAnimationDidStopSelector:@selector(otpChangeDidStop:finished:context:)];
   self.frontCodeLabel.alpha = 0;
   [UIView commitAnimations];
 }
@@ -308,7 +303,6 @@
 - (void)dealloc {
   NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
   [nc removeObserver:self];
-  [super dealloc];
 }
 
 // On iOS4+ we need to make sure our timer based codes are up to date
@@ -352,8 +346,7 @@
   self.frontWarningLabel.alpha = 1;
   [UIView beginAnimations:@"otpFadeOut" context:nil];
   [UIView setAnimationDelegate:self];
-  [self retain];
-  [UIView setAnimationDidStopSelector:@selector(otpChangeDidStop:finished:context:)];
+    [UIView setAnimationDidStopSelector:@selector(otpChangeDidStop:finished:context:)];
   self.frontWarningLabel.alpha = 0;
   [UIView commitAnimations];
 }

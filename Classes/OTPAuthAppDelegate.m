@@ -72,7 +72,6 @@ static NSString *const kOTPKeychainEntriesArray = @"OTPKeychainEntries";
   self.navigationItem = nil;
   self.urlAddAlert = nil;
   self.authURLEntryNavigationItem = nil;
-  [super dealloc];
 }
 
 - (void)awakeFromNib {
@@ -133,7 +132,7 @@ static NSString *const kOTPKeychainEntriesArray = @"OTPKeychainEntries";
   [self.window addSubview:self.navigationController.view];
   if ([self.authURLs count] == 0) {
     OTPWelcomeViewController *controller
-      = [[[OTPWelcomeViewController alloc] init] autorelease];
+      = [[OTPWelcomeViewController alloc] init];
     [self.navigationController pushViewController:controller animated:NO];
   }
   [self.window makeKeyAndVisible];
@@ -152,12 +151,11 @@ static NSString *const kOTPKeychainEntriesArray = @"OTPKeychainEntries";
     NSString *noButton = GTMLocalizedString(@"No", @"No");
     NSString *yesButton = GTMLocalizedString(@"Yes", @"Yes");
 
-    self.urlAddAlert = [[[UIAlertView alloc] initWithTitle:title
+    self.urlAddAlert = [[UIAlertView alloc] initWithTitle:title
                                                    message:message
                                                   delegate:self
                                          cancelButtonTitle:noButton
-                                         otherButtonTitles:yesButton, nil]
-                        autorelease];
+                                         otherButtonTitles:yesButton, nil];
     self.urlBeingAdded = authURL;
     [self.urlAddAlert show];
   }
@@ -227,8 +225,8 @@ static NSString *const kOTPKeychainEntriesArray = @"OTPKeychainEntries";
   UITableViewCell *cell
     = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
   if (!cell) {
-    cell = [[[cellClass alloc] initWithStyle:UITableViewCellStyleDefault
-                             reuseIdentifier:cellIdentifier] autorelease];
+    cell = [[cellClass alloc] initWithStyle:UITableViewCellStyleDefault
+                             reuseIdentifier:cellIdentifier];
   }
   [(OTPTableViewCell *)cell setAuthURL:url];
   return cell;
@@ -367,7 +365,7 @@ static NSString *const kOTPKeychainEntriesArray = @"OTPKeychainEntries";
 
 - (IBAction)showLegalInformation:(id)sender {
   OTPAuthAboutController *controller
-      = [[[OTPAuthAboutController alloc] init] autorelease];
+      = [[OTPAuthAboutController alloc] init];
   [self.navigationController pushViewController:controller animated:YES];
 }
 
@@ -381,7 +379,6 @@ static NSString *const kOTPKeychainEntriesArray = @"OTPKeychainEntries";
 
 - (void)dealloc {
   self.authURL = nil;
-  [super dealloc];
 }
 
 @end

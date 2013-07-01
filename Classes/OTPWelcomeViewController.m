@@ -33,7 +33,6 @@
 
 - (void)dealloc {
   self.welcomeText = nil;
-  [super dealloc];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -42,10 +41,9 @@
   navItem.title = title;
   navItem.hidesBackButton = YES;
   UIBarButtonItem *button
-    = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+    = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                                      target:nil
-                                                     action:@selector(addAuthURL:)]
-       autorelease];
+                                                     action:@selector(addAuthURL:)];
   [navItem setRightBarButtonItem:button animated:NO];
 
   NSString *label = GTMLocalizedString(@"Welcome_label", @"Welcome text");
