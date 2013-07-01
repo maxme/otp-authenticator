@@ -31,13 +31,13 @@
 /* iPhone Title for welcome screen */
 "Welcome" = "Vitajte";
 /* iPhone Welcome text */
-"Welcome_label" = "Aplikácia Google Authenticator generuje verifikačné kódy, ktoré poskytujú ďalšiu úroveň zabezpečenia pri prihlasovaní.\n\nAk chcete použiť aplikáciu Google Authenticator, musíte najprv pridať účet stlačením tlačidla:";
+"Welcome_label" = "Aplikácia OTP Authenticator generuje verifikačné kódy, ktoré poskytujú ďalšiu úroveň zabezpečenia pri prihlasovaní.\n\nAk chcete použiť aplikáciu OTP Authenticator, musíte najprv pridať účet stlačením tlačidla:";
 /* iPhone Legal Information Button Title */
 "Legal Information" = "Právne informácie";
 /* iPhone Short Product Name */
 "Authenticator" = "Authenticator";
 /* iPhone Product Name */
-"Google Authenticator" = "Google Authenticator";
+"OTP Authenticator" = "OTP Authenticator";
 /* iPhone Add Token Navigation Screen Title and Alert Title */
 "Add Token" = "Pridať token";
 /* iPhone Time Based Account Type */

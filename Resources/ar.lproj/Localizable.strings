@@ -37,7 +37,7 @@
 /* iPhone Short Product Name */
 "Authenticator" = "أداة المصادقة";
 /* iPhone Product Name */
-"Google Authenticator" = "أداة مصادقة Google";
+"OTP Authenticator" = "أداة مصادقة Google";
 /* iPhone Add Token Navigation Screen Title and Alert Title */
 "Add Token" = "إضافة رمز مميز";
 /* iPhone Time Based Account Type */

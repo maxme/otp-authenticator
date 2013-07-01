@@ -80,7 +80,7 @@ static NSString *const kOTPKeychainEntriesArray = @"OTPKeychainEntries";
     = GTMLocalizedString(@"Legal Information",
                          @"Legal Information Button Title");
   self.navigationItem.title
-    = GTMLocalizedString(@"Google Authenticator",
+    = GTMLocalizedString(@"OTP Authenticator",
                          @"Product Name");
   self.authURLEntryNavigationItem.title
     = GTMLocalizedString(@"Add Token",

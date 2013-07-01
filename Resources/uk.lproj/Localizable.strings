@@ -37,7 +37,7 @@
 /* iPhone Short Product Name */
 "Authenticator" = "Генератор кодів";
 /* iPhone Product Name */
-"Google Authenticator" = "Генератор кодів Google";
+"OTP Authenticator" = "Генератор кодів Google";
 /* iPhone Add Token Navigation Screen Title and Alert Title */
 "Add Token" = "Дод. маркер";
 /* iPhone Time Based Account Type */

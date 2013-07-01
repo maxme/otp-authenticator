@@ -31,13 +31,13 @@
 /* iPhone Title for welcome screen */
 "Welcome" = "Добро дошли";
 /* iPhone Welcome text */
-"Welcome_label" = "Google Authenticator генерише верификационе кодове који пружају додатну безбедност приликом пријаве.\n\nДа бисте користили Google Authenticator морате прво да додате налог притиском на:";
+"Welcome_label" = "OTP Authenticator генерише верификационе кодове који пружају додатну безбедност приликом пријаве.\n\nДа бисте користили OTP Authenticator морате прво да додате налог притиском на:";
 /* iPhone Legal Information Button Title */
 "Legal Information" = "Правне информације";
 /* iPhone Short Product Name */
 "Authenticator" = "Authenticator";
 /* iPhone Product Name */
-"Google Authenticator" = "Google Authenticator";
+"OTP Authenticator" = "OTP Authenticator";
 /* iPhone Add Token Navigation Screen Title and Alert Title */
 "Add Token" = "Додавање токена";
 /* iPhone Time Based Account Type */
