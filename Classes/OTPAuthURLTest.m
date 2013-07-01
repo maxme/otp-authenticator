@@ -1,6 +1,7 @@
 //
 //  OTPAuthURLTest.m
 //
+//  Copyright 2013 Rising Oak LLC
 //  Copyright 2011 Google Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License"); you may not
@@ -16,11 +17,11 @@
 //  the License.
 //
 
-#import "GTMSenTestCase.h"
+#import <SenTestingKit/SenTestingKit.h>
 
-#import "GTMStringEncoding.h"
-#import "GTMNSDictionary+URLArguments.h"
-#import "GTMNSString+URLArguments.h"
+#import <GTMStringEncoding.h>
+#import <GTMNSDictionary+URLArguments.h>
+#import <GTMNSString+URLArguments.h>
 #import "HOTPGenerator.h"
 #import "OTPAuthURL.h"
 #import "TOTPGenerator.h"
@@ -69,7 +70,7 @@ static NSString *const kValidHOTPURL =
     @"&counter=18446744073709551615"
     @"&secret=AAAQEAYEAUDAOCAJBIFQYDIOB4";
 
-@interface OTPAuthURLTest : GTMTestCase
+@interface OTPAuthURLTest : SenTestCase
 - (void)testInitWithKeychainDictionary;
 - (void)testInitWithTOTPURL;
 - (void)testInitWithHOTPURL;
@@ -89,8 +90,8 @@ static NSString *const kValidHOTPURL =
 
   OTPAuthURL *url = [OTPAuthURL authURLWithKeychainDictionary:
                      [NSDictionary dictionaryWithObjectsAndKeys:
-                      urlData, (id)kSecAttrGeneric,
-                      secret, (id)kSecValueData,
+                      urlData, (__bridge id)kSecAttrGeneric,
+                      secret, (__bridge id)kSecValueData,
                       nil]];
 
   STAssertEqualObjects([url name], kValidLabel, @"Léon");
@@ -165,14 +166,12 @@ static NSString *const kValidHOTPURL =
 
 - (void)testInitWithOTPGeneratorLabel {
   TOTPGenerator *generator
-    = [[[TOTPGenerator alloc] initWithSecret:[NSData data]
+    = [[TOTPGenerator alloc] initWithSecret:[NSData data]
                                    algorithm:[OTPGenerator defaultAlgorithm]
-                                      digits:[OTPGenerator defaultDigits]]
-       autorelease];
+                                      digits:[OTPGenerator defaultDigits]];
 
-  OTPAuthURL *url = [[[OTPAuthURL alloc] initWithOTPGenerator:generator
-                                                         name:kValidLabel]
-                     autorelease];
+  OTPAuthURL *url = [[OTPAuthURL alloc] initWithOTPGenerator:generator
+                                                         name:kValidLabel];
 
   STAssertEquals([url generator], generator, @"");
   STAssertEqualObjects([url name], kValidLabel, @"");

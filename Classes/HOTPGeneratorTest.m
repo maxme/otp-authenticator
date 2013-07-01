@@ -33,10 +33,10 @@
   NSData *secretData = [secret dataUsingEncoding:NSASCIIStringEncoding];
 
   HOTPGenerator *generator
-    = [[[HOTPGenerator alloc] initWithSecret:secretData
+    = [[HOTPGenerator alloc] initWithSecret:secretData
                                    algorithm:kOTPGeneratorSHA1Algorithm
                                       digits:6
-                                     counter:0] autorelease];
+                                     counter:0];
   STAssertNotNil(generator, nil);
 
   STAssertEqualObjects(@"755224", [generator generateOTPForCounter:0], nil);
