@@ -44,8 +44,6 @@
 	<true/>
 	<key>NSMainNibFile</key>
 	<string>MainWindow</string>
-	<key>NSPrincipalClass</key>
-	<string>OTPAuthApplication</string>
 	<key>UIPrerenderedIcon</key>
 	<true/>
 </dict>
