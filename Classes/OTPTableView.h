@@ -18,12 +18,6 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol OTPTableViewDelegate
- @optional
-- (void)otp_tableViewWillBeginEditing:(UITableView *)tableView;
-- (void)otp_tableViewDidEndEditing:(UITableView *)tableView;
-@end
-
 // OTPTableViews notify their delegates when editing begins and ends.
 @interface OTPTableView : UITableView
 @end

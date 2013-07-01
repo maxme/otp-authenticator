@@ -35,36 +35,10 @@
                          alpha:1.0];
 }
 
-+ (UIColor *)googleReadItemBackgroundColor {
-  return [UIColor colorWithRed:(float)0xF3/0xFF
-                         green:(float)0xF5/0xFF
-                          blue:(float)0xFC/0xFF
-                         alpha:1.0];
-}
-
-+ (UIColor *)googleTableViewSeparatorColor {
-  return [UIColor colorWithWhite:0.95
-                         alpha:1.0];
-}
-
 + (UIColor *)googleBlueTextColor {
   return [UIColor colorWithRed:(float)0x33/0xFF
                          green:(float)0x55/0xFF
                           blue:(float)0x99/0xFF
-                         alpha:1.0];
-}
-
-+ (UIColor *)googleGreenURLTextColor {
-  return [UIColor colorWithRed:(float)0x7F/0xFF
-                         green:(float)0xA8/0xFF
-                          blue:(float)0x7F/0xFF
-                         alpha:1.0];
-}
-
-+ (UIColor *)googleAdYellowBackgroundColor {
-  return [UIColor colorWithRed:1.0     // 255
-                         green:0.9725  // 248
-                          blue:0.8667  // 221
                          alpha:1.0];
 }
 

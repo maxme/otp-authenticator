@@ -24,11 +24,7 @@
 @interface UIColor (GMOMobileColors)
 + (UIColor *)googleBlueBarColor;
 + (UIColor *)googleBlueBackgroundColor;
-+ (UIColor *)googleTableViewSeparatorColor;
-+ (UIColor *)googleReadItemBackgroundColor;
 + (UIColor *)googleBlueTextColor;
-+ (UIColor *)googleGreenURLTextColor;
-+ (UIColor *)googleAdYellowBackgroundColor;
 @end
 
 // Returns a gradient that mimics a navigation bar tinted with

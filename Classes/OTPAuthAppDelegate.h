@@ -25,7 +25,7 @@ typedef enum {
   kOTPEditingTable
 } OTPEditingState;
 
-@interface OTPAuthAppDelegate : NSObject
+@interface OTPAuthAppDelegate : UIResponder
     <UIApplicationDelegate,
     OTPAuthURLEntryControllerDelegate,
     UITableViewDataSource,

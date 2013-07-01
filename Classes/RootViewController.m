@@ -31,7 +31,6 @@
 @end
 
 @implementation RootViewController
-@synthesize delegate = delegate_;
 @synthesize clock = clock_;
 @synthesize addItem = addItem_;
 @synthesize legalItem = legalItem_;
@@ -39,7 +38,7 @@
 - (void)dealloc {
   [self.clock invalidate];
   self.clock = nil;
-  self.delegate = nil;
+//  self.delegate = nil;
   self.addItem = nil;
   self.legalItem = nil;
 }
