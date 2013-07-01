@@ -953,6 +953,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
 				INFOPLIST_FILE = "OTPAuth-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = Authenticator;
 			};
 			name = Debug;
@@ -963,6 +964,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
 				INFOPLIST_FILE = "OTPAuth-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = Authenticator;
 			};
 			name = Release;
