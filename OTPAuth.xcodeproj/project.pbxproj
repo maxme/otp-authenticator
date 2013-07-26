@@ -49,6 +49,8 @@
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
 		39B5364404004693A7A08F45 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C3924A1437E42C9A04C43EC /* libPods.a */; };
+		502BD826179D97A100592828 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 502BD825179D97A100592828 /* libz.dylib */; };
+		502BD828179D97A800592828 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 502BD827179D97A800592828 /* libsqlite3.dylib */; };
 		8B0022E011E7BF800092DE18 /* OTPTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0022DF11E7BF800092DE18 /* OTPTableView.m */; };
 		8B0028B511EB75920092DE18 /* OTPScannerOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0028B411EB75920092DE18 /* OTPScannerOverlayView.m */; };
 		8B00365311ECD2390092DE18 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B00365211ECD2390092DE18 /* Default.png */; };
@@ -123,6 +125,8 @@
 		28C286E00D94DF7D0034E888 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		37B0417CB56B4771B431D764 /* libPods-test.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-test.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		502BD825179D97A100592828 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		502BD827179D97A800592828 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		8B0022DE11E7BF800092DE18 /* OTPTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTPTableView.h; sourceTree = "<group>"; };
 		8B0022DF11E7BF800092DE18 /* OTPTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTPTableView.m; sourceTree = "<group>"; };
 		8B0028B311EB75920092DE18 /* OTPScannerOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTPScannerOverlayView.h; sourceTree = "<group>"; };
@@ -296,6 +300,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				502BD828179D97A800592828 /* libsqlite3.dylib in Frameworks */,
+				502BD826179D97A100592828 /* libz.dylib in Frameworks */,
 				8B2B86FE118B8FA000437315 /* UIKit.framework in Frameworks */,
 				8B2B8728118B900E00437315 /* CoreFoundation.framework in Frameworks */,
 				8B2B8755118B902200437315 /* CoreGraphics.framework in Frameworks */,
@@ -406,6 +412,8 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				502BD827179D97A800592828 /* libsqlite3.dylib */,
+				502BD825179D97A100592828 /* libz.dylib */,
 				17F8ED5A17808ABF00B0B8B2 /* README.md */,
 				8B4553CA1192158300ABD707 /* Entitlements.plist */,
 				179AEEAC178104AA00CD0330 /* Tests */,
@@ -501,7 +509,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "OTPAuth" */;
 			buildPhases = (
-				E06BF2157F3046D8ACD34A52 /* Check Pods Manifest.lock */,
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
@@ -687,20 +694,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Generates pngs from our PDFs.\n# You will need to check out that PNG files from perforce before running this script.\n# You should never actually edit the PNG files. You should edit the PDFs and generate the PNGs from there.\n\n/usr/bin/sips -s format png -s dpiHeight 72 -s dpiWidth 72 -z 48 48 --out \"${SRCROOT}/Resources/Generated/Refresh.png\" \"${SRCROOT}/Resources/Refresh.pdf\"\n/usr/bin/sips -s format png -s dpiHeight 72 -s dpiWidth 72 -z 96 96 --out \"${SRCROOT}/Resources/Generated/Refresh@2x.png\" \"${SRCROOT}/Resources/Refresh.pdf\"\n/usr/bin/sips -s format png -s dpiHeight 72 -s dpiWidth 72 -z 29 33 --out \"${SRCROOT}/Resources/Generated/PlusButton.png\" \"${SRCROOT}/Resources/PlusButton.pdf\"\n/usr/bin/sips -s format png -s dpiHeight 72 -s dpiWidth 72 -z 58 66 --out \"${SRCROOT}/Resources/Generated/PlusButton@2x.png\" \"${SRCROOT}/Resources/PlusButton.pdf\"\n/usr/bin/sips -s format png -s dpiHeight 72 -s dpiWidth 72 -z 24 24 --out \"${SRCROOT}/Resources/Generated/Info.png\" \"${SRCROOT}/Resources/Info.pdf\"\n/usr/bin/sips -s format png -s dpiHeight 72 -s dpiWidth 72 -z 48 48 --out \"${SRCROOT}/Resources/Generated/Info@2x.png\" \"${SRCROOT}/Resources/Info.pdf\"\n/usr/bin/sips -s format png -s dpiHeight 72 -s dpiWidth 72 -z 24 24 --out \"${SRCROOT}/Resources/Generated/close.png\" \"${SRCROOT}/Resources/close.pdf\"\n/usr/bin/sips -s format png -s dpiHeight 72 -s dpiWidth 72 -z 48 48 --out \"${SRCROOT}/Resources/Generated/close@2x.png\" \"${SRCROOT}/Resources/close.pdf\"";
-		};
-		E06BF2157F3046D8ACD34A52 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
